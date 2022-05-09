@@ -28,27 +28,27 @@ Una vez seleccionados los diferentes grupos que voy a utilizar para el entrenami
 | Variables | reducción de las variables por medio de lasso |
 | ----------- | ----------- |
 |(Intercept)             |                            7.34620632|
-sexoMujer                                            -0.30105839
-edad                                                  0.01364039
-nivelaprobSecundaria                                  0.20485057
-nivelaprobPreparatoria o bachillerato                 0.46249455
-nivelaprobTécnica/Normal                              0.67245068
-nivelaprobProfesional                                 0.98504366
-nivelaprobPosgrado                                    1.61803879
-nivelaprobNinguno                                    -0.25270438
-edo_conyugEs viudo(a)                                 0.20897234
-edo_conyugEstá divorciado(a)                          0.19180292
-edo_conyugEstá separado(a)                            0.09151752
-edo_conyugEstá soltero(a)                            -0.28975900
-edo_conyugVive con su pareja o en unión libre         .         
-redsoc_3Difícil conseguirla                          -0.15806694
-redsoc_3Fácil conseguirla                             0.02275194
-redsoc_3Imposible conseguirla                        -0.18572554
-redsoc_3Ni fácil ni difícil conseguirla (espontánea) -0.04836351
-redsoc_3No aplica                                     0.39894748
-segsocSí                                              0.61071821
-trabajo_mpTrabajó el mes pasado                       0.57216288
-hor_1                                                 0.01292444
-lenguabilig                                          -0.24064179
-lenguaind                                            -0.47228475
-discSí                                               -0.18491723 
+sexoMujer               |                            -0.30105839|
+edad                    |                             0.01364039|
+nivelaprobSecundaria     |                            0.20485057|
+nivelaprobPreparatoria o bachillerato |               0.46249455|
+nivelaprobTécnica/Normal               |              0.67245068|
+nivelaprobProfesional                   |             0.98504366|
+nivelaprobPosgrado                       |            1.61803879|
+nivelaprobNinguno                         |          -0.25270438|
+edo_conyugEs viudo(a)                      |          0.20897234|
+edo_conyugEstá divorciado(a)                |         0.19180292|
+edo_conyugEstá separado(a)                   |        0.09151752|
+edo_conyugEstá soltero(a)                     |      -0.28975900|
+edo_conyugVive con su pareja o en unión libre  |      .         |
+redsoc_3Difícil conseguirla                     |    -0.15806694|
+redsoc_3Fácil conseguirla                        |    0.02275194|
+redsoc_3Imposible conseguirla                     |  -0.18572554|
+redsoc_3Ni fácil ni difícil conseguirla (espontánea)|-0.04836351|
+redsoc_3No aplica                                   | 0.39894748|
+segsocSí                                             |0.61071821|
+trabajo_mpTrabajó el mes pasado                  |    0.57216288|
+hor_1                                             |   0.01292444|
+lenguabilig                                        | -0.24064179|
+lenguaind                                        |   -0.47228475|
+discSí                                            |  -0.18491723|

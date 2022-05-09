@@ -25,6 +25,21 @@ ingreso %>%
 ```
 Una vez seleccionados los diferentes grupos que voy a utilizar para el entrenamiento del modelo pongo a entrenar el primer conjunto.
 
+```
+ingreso_train %>%
+  select(-ingreso_trim, -id) %>%
+  # Esta matriz de predictores genera las variable dummy para las categóricas
+  model.matrix(~., .) %>%        
+  #Pero también genera la ordenada al orígen: tengo que quitarla
+  .[, -1] -> X_train
+
+cv.glmnet(X_train, y_train) -> cv_ingreso
+  
+  
+```  
+El resultado es el siguiente:
+
+
 | Variables | reducción de las variables por medio de lasso |
 | ----------- | ----------- |
 |(Intercept)             |                            7.34620632|
@@ -52,3 +67,36 @@ hor_1                                             |   0.01292444|
 lenguabilig                                        | -0.24064179|
 lenguaind                                        |   -0.47228475|
 discSí                                            |  -0.18491723|
+
+
+Esta tabla nos indica que dentro del entrenamiento solo algunos coeficientes quedan en ceros, sin embargo todos tienen importancia, puesto que todos tienen una relación significativa con el ingreso trimestral de un/a mexicano/a.
+
+¿Qué coeficientes quedan en cero con el criterio de minimización a 1 error estándar del mínimo?
+
+| Variables | cercanas a cero de acuerdo a 1 error estándar |
+| ----------- | ----------- |
+|(Intercept)      |                                   7.36329522|
+sexoMujer          |                                 -0.27330266|
+edad                |                                 0.01171419|
+nivelaprobSecundaria |                                0.10210350|
+nivelaprobPreparatoria o bachillerato|                0.34676398|
+nivelaprobTécnica/Normal              |               0.54929292|
+nivelaprobProfesional                  |              0.87250971|
+nivelaprobPosgrado                     |              1.44408906|
+nivelaprobNinguno                      |             -0.23923703|
+edo_conyugEs viudo(a)                  |              0.12927785|
+edo_conyugEstá divorciado(a)           |              0.12005484|
+edo_conyugEstá separado(a)             |              0.03034710|
+edo_conyugEstá soltero(a)              |             -0.28259252|
+edo_conyugVive con su pareja o en unión libre|        .         |
+redsoc_3Difícil conseguirla                  |       -0.02950119|
+redsoc_3Fácil conseguirla                    |        0.12452319|
+redsoc_3Imposible conseguirla                |       -0.04056950|
+redsoc_3Ni fácil ni difícil conseguirla (espontánea)| .         |
+redsoc_3No aplica                           |         0.47398384|
+segsocSí                                    |         0.64023980|
+trabajo_mpTrabajó el mes pasado             |         0.57194415|
+hor_1                                       |         0.01243489|
+lenguabilig                                 |        -0.21883453|
+lenguaind                                   |        -0.36568589|
+discSí                                      |        -0.13011757|

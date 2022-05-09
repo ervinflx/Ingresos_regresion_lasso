@@ -100,3 +100,17 @@ hor_1                                       |         0.01243489|
 lenguabilig                                 |        -0.21883453|
 lenguaind                                   |        -0.36568589|
 discSí                                      |        -0.13011757|
+
+
+De acuerdo al modelo creado, ¿cuál sería la predicción del ingreso trimestral?
+
+```
+predict(cv_ingreso, newx = X_test,s = "lambda.1se") -> prediccion_1se
+predict(cv_ingreso, newx = X_test,s = "lambda.min") -> predecir_min
+predict(cv_ingreso, newx = X_test,s = 0) -> prediccion_0
+
+tibble(real = ingreso_test$ingreso_trim, prediccion = predecir_min[, 1]) %>% 
+  mutate(residuo = abs(prediccion - real)) %>% 
+  summarise(mean(residuo)) %>% deframe()
+```
+El resultado de la predicción para el ingreso trimestral, de acuerdo con las variables y el modelo de lasso, es: 0.7211189

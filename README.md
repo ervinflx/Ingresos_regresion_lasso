@@ -27,7 +27,7 @@ Una vez seleccionados los diferentes grupos que voy a utilizar para el entrenami
 
 | Variables | reducción de las variables por medio de lasso |
 | ----------- | ----------- |
-(Intercept)                                           7.34620632
+|(Intercept)             |                            7.34620632|
 sexoMujer                                            -0.30105839
 edad                                                  0.01364039
 nivelaprobSecundaria                                  0.20485057
